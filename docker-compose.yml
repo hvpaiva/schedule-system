@@ -1,0 +1,25 @@
+version: '3.8'
+services:
+  axonserver:
+    container_name: schedule-axonserver
+    platform: linux/arm64
+    image: axoniq/axonserver:latest-dev
+    hostname: axonserver
+    volumes:
+      - axonserver-data:/data
+      - axonserver-events:/eventdata
+      - axonserver-config:/config:ro
+    ports:
+      - '8024:8024'
+      - '8124:8124'
+      - '8224:8224'
+    networks:
+      - axon-net
+volumes:
+  axonserver-data:
+  axonserver-events:
+  axonserver-config:
+networks:
+  axon-net:
+
+
