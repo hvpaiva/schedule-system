@@ -1,0 +1,9 @@
+### Get all schedules
+GET http://localhost:8083/schedules
+
+### Get a schedule
+GET http://localhost:8083/schedules/1
+
+
+
+

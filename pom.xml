@@ -21,6 +21,7 @@
     <modules>
         <module>schedule-command</module>
         <module>schedule-shared</module>
+        <module>schedule-query</module>
     </modules>
 
     <properties>

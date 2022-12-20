@@ -16,6 +16,8 @@ data class BankAccount(val value: String) : Serializable
 data class Money(val amount: BigDecimal, val currency: Currency) : Serializable {
     constructor(amount: BigDecimal) : this(amount, Currency.getInstance("BRL"))
 
+    fun toBigDecimal() = amount.setScale(2, RoundingMode.HALF_EVEN)
+
     override fun toString(): String = "${currency.symbol} ${amount.setScale(2, RoundingMode.DOWN)}"
 }
 

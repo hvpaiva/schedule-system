@@ -14,12 +14,29 @@ services:
       - '8124:8124'
       - '8224:8224'
     networks:
-      - axon-net
+      - schedule-net
+
+  mysql:
+    platform: linux/arm64/v8
+    container_name: read-db
+    image: mysql:latest
+    restart: always
+    ports:
+      - "3306:3306"
+    volumes:
+      - "read_db_data:/var/lib/mysql"
+    environment:
+      - MYSQL_ROOT_PASSWORD=pwd
+      - MYSQL_DATABASE=schedule
+    networks:
+      - schedule-net
 volumes:
   axonserver-data:
   axonserver-events:
   axonserver-config:
+  read_db_data:
+    driver: local
 networks:
-  axon-net:
+  schedule-net:
 
 
