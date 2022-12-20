@@ -15,7 +15,7 @@ import org.axonframework.modelling.command.AggregateLifecycle
 import org.axonframework.spring.stereotype.Aggregate
 import java.time.OffsetDateTime
 
-@Aggregate
+@Aggregate(snapshotTriggerDefinition = "scheduleSnapshotTriggerDefinition")
 class Schedule {
     @AggregateIdentifier
     private lateinit var identifier: ScheduleId

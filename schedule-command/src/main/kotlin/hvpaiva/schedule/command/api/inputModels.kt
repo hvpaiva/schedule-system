@@ -11,3 +11,11 @@ data class CreateScheduleInputModel(
     val recurrence: String,
     val operation: String
 )
+
+data class ChangeAmountInputModel(
+    val amount: BigDecimal
+)
+
+data class ChangeRecurrenceInputModel(
+    val recurrence: String
+)

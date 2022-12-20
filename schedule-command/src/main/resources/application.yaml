@@ -1,8 +1,20 @@
 server:
   port: 8082
 
+spring:
+  application:
+    name: schedule-command
+
 axon:
   serializer:
     general: jackson
     events: jackson
     messages: jackson
+  eventhandling:
+    processors:
+      schedule:
+        mode: tracking
+  snapshot:
+    trigger:
+      threshold:
+        schedule: 2

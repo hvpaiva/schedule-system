@@ -1,0 +1,35 @@
+### Create a new schedule
+POST http://localhost:8082/schedules
+Content-Type: application/json
+X-Requester-Name: IntelliJ
+
+{
+  "productId": "20",
+  "bankAccount": "123456",
+  "amount": 10.00,
+  "date": "2022-12-15T21:45:31.201-03:00",
+  "recurrence": "ONCE",
+  "operation": "BUY"
+}
+
+### Cancel a schedule
+PATCH http://localhost:8082/schedules/e446f71f-936e-4be3-be59-8e4dff41851c/deactivate
+X-Requester-Name: IntelliJ
+
+### Change a schedule amount
+PATCH http://localhost:8082/schedules/e446f71f-936e-4be3-be59-8e4dff41851c/change-amount
+Content-Type: application/json
+X-Requester-Name: IntelliJ
+
+{
+  "amount": 30.00
+}
+
+### Change a schedule recurrence
+PATCH http://localhost:8082/schedules/e446f71f-936e-4be3-be59-8e4dff41851c/change-recurrence
+Content-Type: application/json
+X-Requester-Name: IntelliJ
+
+{
+  "recurrence": "WEEKLY"
+}
